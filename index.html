@@ -1,101 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Fast Online Tax Filing</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background: #004A9F;
-      color: #fff;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    header img {
-      max-width: 200px;
-      margin-bottom: 20px;
-    }
-    header h1 {
-      font-size: 2.8rem;
-      margin: 0;
-    }
-    header p {
-      font-size: 1.2rem;
-      margin-top: 8px;
-    }
-    .btn-primary {
-      background: #FF9500;
-      color: white;
-      padding: 14px 28px;
-      font-size: 1.1rem;
-      margin-top: 20px;
-      text-decoration: none;
-      display: inline-block;
-      border-radius: 6px;
-    }
-    .features {
-      max-width: 900px;
-      margin: 40px auto;
-      display: grid;
-      gap: 24px;
-      grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
-      padding: 0 20px;
-    }
-    .feature-card {
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    .feature-card h3 {
-      margin-top: 0;
-      color: #004A9F;
-    }
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      padding: 16px;
-      background: #eee;
-      margin-top: 60px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Fast Online Tax Filing</title>
+<style>
+  /* Reset & Base */
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#f0f4f8; color:#333; overflow-x:hidden; }
+
+  a { text-decoration:none; color:inherit; }
+
+  /* Hero */
+  header {
+    position:relative;
+    background: linear-gradient(135deg,#004A9F,#007BFF);
+    color:white; text-align:center;
+    padding:100px 20px 80px;
+    overflow:hidden;
+  }
+  header img { max-width:220px; cursor:pointer; transition: transform 0.3s ease; }
+  header img:hover { transform: scale(1.1); }
+
+  header h1 { font-size:3rem; margin:20px 0 10px; opacity:0; transform:translateY(20px); animation:fadeInUp 1s forwards 0.2s;}
+  header p { font-size:1.3rem; margin-bottom:30px; opacity:0; transform:translateY(20px); animation:fadeInUp 1s forwards 0.4s; }
+
+  .btn-primary {
+    background:#FF9500; color:white; padding:16px 36px; font-size:1.2rem; border-radius:8px;
+    display:inline-block; cursor:pointer; transition:0.3s;
+    opacity:0; transform:translateY(20px); animation:fadeInUp 1s forwards 0.6s;
+  }
+  .btn-primary:hover { background:#ff7a00; transform: scale(1.05); }
+
+  @keyframes fadeInUp { to { opacity:1; transform:translateY(0); } }
+
+  /* Countdown Timer */
+  .countdown { font-size:1.5rem; margin-top:15px; font-weight:bold; color:#fff; opacity:0; transform:translateY(20px); animation:fadeInUp 1s forwards 0.8s; }
+
+  /* Features */
+  .features { max-width:1000px; margin:60px auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px; padding:0 20px; }
+  .feature-card {
+    background:white; padding:30px 20px; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s; cursor:pointer; opacity:0; transform:translateY(20px);
+  }
+  .feature-card:hover { transform:translateY(-5px); box-shadow:0 12px 28px rgba(0,0,0,0.12); }
+  .feature-card h3 { color:#004A9F; margin-top:0; margin-bottom:12px; }
+
+  /* Footer */
+  footer { text-align:center; font-size:0.9rem; padding:20px; background:#e6ebf1; margin-top:60px; }
+  footer a { color:#007BFF; }
+
+  /* Background Animations */
+  .bg-circle { position:absolute; border-radius:50%; opacity:0.1; animation:moveCircle 20s infinite linear; }
+  @keyframes moveCircle { 0%{transform:translate(0,0)} 50%{transform:translate(200px,100px)} 100%{transform:translate(0,0)} }
+
+  /* Responsive */
+  @media(max-width:500px) {
+    header h1{font-size:2.2rem;}
+    header p{font-size:1rem;}
+    .btn-primary{padding:14px 28px; font-size:1rem;}
+  }
+</style>
 </head>
 <body>
 
 <header>
-  <!-- Replace "efile-logo.png" with your actual E‑File.com logo file -->
-  <img src="efile-logo.png" alt="E‑File.com Logo">
-  <h1>File Your Taxes Online — Done Right</h1>
-  <p>Fast. Secure. Simple.</p>
-  <a class="btn-primary" href="https://benitopalmarini.github.io/e-FilingTaxesOnline/" target="_blank">
+  <!-- Animated circles -->
+  <div class="bg-circle" style="width:200px;height:200px;top:20px;left:30px;background:#fff;"></div>
+  <div class="bg-circle" style="width:150px;height:150px;top:150px;right:50px;background:#fff;"></div>
+
+  <a href="http://convert.ctypy.com/aff_c?offer_id=29269&aff_id=21885" target="_blank">
+    <img src="efile-graphic.png" alt="E-File Graphic">
+  </a>
+  <h1>File Your Taxes Online – Fast & Secure</h1>
+  <p>Get your refund faster with our simple online tax filing.</p>
+
+  <div class="countdown" id="countdown">Offer ends in: 03:00:00</div>
+
+  <a class="btn-primary" href="http://convert.ctypy.com/aff_c?offer_id=29269&aff_id=21885" target="_blank">
     Start Filing Now
   </a>
 </header>
 
 <section class="features">
-  <div class="feature-card">
+  <a class="feature-card" href="http://convert.ctypy.com/aff_c?offer_id=29269&aff_id=21885" target="_blank">
+    <h3>Quick & Easy</h3>
+    <p>Step-by-step guidance makes filing simple, even if it’s your first time.</p>
+  </a>
+  <a class="feature-card" href="http://convert.ctypy.com/aff_c?offer_id=29269&aff_id=21885" target="_blank">
     <h3>Secure & Trusted</h3>
-    <p>We link you to the official tax filing experience with secure redirect and transparent tools. Your privacy is our priority.</p>
-  </div>
-  <div class="feature-card">
-    <h3>Step‑by‑Step Guidance</h3>
-    <p>Easy walkthrough to help you file your federal return quickly and accurately — no surprises.</p>
-  </div>
-  <div class="feature-card">
-    <h3>Mobile‑Ready Experience</h3>
-    <p>Access from your phone or desktop — optimized for all screens so filing is convenient anywhere.</p>
-  </div>
+    <p>Your personal info is encrypted and protected while filing your taxes.</p>
+  </a>
+  <a class="feature-card" href="http://convert.ctypy.com/aff_c?offer_id=29269&aff_id=21885" target="_blank">
+    <h3>Mobile Friendly</h3>
+    <p>File your taxes anytime, anywhere, on desktop or mobile devices.</p>
+  </a>
 </section>
 
 <footer>
-  &copy; 2026 Fast Online Filing • Powered by YourSiteName • <a href="https://benitopalmarini.github.io/e-FilingTaxesOnline/" target="_blank">Original Filing Page</a>
+  &copy; 2026 Fast Online Filing • Powered by YourSiteName • 
+  <a href="http://convert.ctypy.com/aff_c?offer_id=29269&aff_id=21885" target="_blank">Start Filing</a>
 </footer>
+
+<script>
+// Countdown timer (3 hours)
+const countdownEl = document.getElementById('countdown');
+let countdownTime = 3*60*60; // 3 hours in seconds
+
+function updateCountdown() {
+  const hrs = Math.floor(countdownTime/3600);
+  const mins = Math.floor((countdownTime%3600)/60);
+  const secs = countdownTime % 60;
+  countdownEl.textContent = `Offer ends in: ${hrs.toString().padStart(2,'0')}:${mins.toString().padStart(2,'0')}:${secs.toString().padStart(2,'0')}`;
+  if(countdownTime>0) { countdownTime--; setTimeout(updateCountdown,1000); }
+}
+updateCountdown();
+
+// Scroll fade-in animation
+const cards = document.querySelectorAll('.feature-card');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => { if(entry.isIntersecting) { entry.target.style.opacity=1; entry.target.style.transform='translateY(0)'; } });
+}, {threshold:0.2});
+cards.forEach(card => observer.observe(card));
+</script>
 
 </body>
 </html>
